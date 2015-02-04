@@ -7,7 +7,7 @@ public class TestRingBufferishThing {
 
 	@Test
 	public void test() {
-		RingBufferishThing rbt = new RingBufferishThing(10);
+		RingBufferishThing<Integer> rbt = new RingBufferishThing<>(Integer.class, 10);
 		int extra = 40;
 		for(int i = 0; i < rbt.elements.length + extra ; ++i) {
 			rbt.add(i);
