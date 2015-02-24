@@ -11,13 +11,11 @@ import javax.swing.BorderFactory;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
-public class Map extends JPanel {
+public class Graph extends JPanel {
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	Node rootNode;
-	ArrayList<Node> nodes = new ArrayList<>(100);
 	public final Dimension size = new Dimension(800, 600);
 	private BufferedImage image = new BufferedImage(size.width, size.height, BufferedImage.TYPE_INT_RGB);
 	
@@ -28,7 +26,7 @@ public class Map extends JPanel {
         g.drawString("This is my custom Panel!",10,20);
     }
 	
-	public Map() {
+	public Graph() {
 		setBorder(BorderFactory.createLineBorder(Color.black));
 		setPreferredSize(size);
 		generateMap();
@@ -45,10 +43,10 @@ public class Map extends JPanel {
 
 	public static void main(String[] args) {
 		JFrame frame = new JFrame("Scene Graph");
-		Map map = new Map();
+		Graph graph = new Graph();
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setSize(map.size);
-		frame.getContentPane().add(map, BorderLayout.CENTER);
+        frame.setSize(graph.size);
+		frame.getContentPane().add(graph, BorderLayout.CENTER);
 		frame.pack();
 		frame.setVisible(true);
 	}
