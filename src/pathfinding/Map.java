@@ -18,7 +18,7 @@ public class Map extends JPanel {
 	private static final long serialVersionUID = 1L;
 	Node rootNode;
 	ArrayList<Node> nodes = new ArrayList<>(100);
-	public final Dimension size = new Dimension(400, 500);
+	public final Dimension size = new Dimension(800, 600);
 	private BufferedImage image = new BufferedImage(size.width, size.height, BufferedImage.TYPE_INT_RGB);
 	
 	public void paintComponent(Graphics g) {
@@ -47,7 +47,7 @@ public class Map extends JPanel {
 		JFrame frame = new JFrame("Scene Graph");
 		Map map = new Map();
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setSize(250,250);
+        frame.setSize(map.size);
 		frame.getContentPane().add(map, BorderLayout.CENTER);
 		frame.pack();
 		frame.setVisible(true);
