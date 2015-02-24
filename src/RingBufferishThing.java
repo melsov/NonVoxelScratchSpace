@@ -3,8 +3,8 @@ import java.lang.reflect.Array;
 /*
  * Not sure if this does everything that RingBuffers are supposed
  * to do. (Hence 'RingBufferish'). 
- * Writes integers to a backing array
- * When the capacity is full, simply overwrites the oldest element 
+ * Writes 'T' type objects to a backing array
+ * When the array is full, simply overwrites the oldest element 
  */
 public class RingBufferishThing<T> {
 	public final T[] elements; //the backing array
@@ -20,8 +20,7 @@ public class RingBufferishThing<T> {
 		// If length == elements.length, writeIndex
 		// will end up being start,
 		// otherwise it will end up being length
-		int writeIndex = (start + length) % elements.length;
-		elements[writeIndex] = value;
+		elements[(start + length) % elements.length] = value;
 		
 		if (length < elements.length) {
 			length++;

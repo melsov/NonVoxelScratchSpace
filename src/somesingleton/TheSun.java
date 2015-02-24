@@ -10,7 +10,6 @@ public final class TheSun {
 	private TheSun() {
 	}
 	
-	
 	public static TheSun GetTheSun() {
 		if(theSun == null) {
 			theSun = new TheSun();
